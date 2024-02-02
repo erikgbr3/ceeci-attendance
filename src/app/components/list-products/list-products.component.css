@@ -1,0 +1,49 @@
+.container {
+    border: 1px solid;
+    border-color: gainsboro;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons {
+    margin: 10px;
+    border-radius: 4px;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.buttons button {
+    margin-left: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.d-inline-block {
+    position: relative;
+}
+
+app-datepicker {
+    margin-left: auto;
+}
+
+.column {
+    text-align: center;
+}
+
+.form-check {
+    margin-left: 40px;
+}

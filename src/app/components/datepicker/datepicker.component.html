@@ -1,0 +1,17 @@
+<form class="row row-cols-sm-auto">
+	<div class="col-12">
+		<div class="input-group">
+			<input
+				class="form-control"
+				placeholder="dd-mm-yyyy"
+				name="dp"
+				[(ngModel)]="model"
+				ngbDatepicker
+				#d="ngbDatepicker"
+			/>
+			<button class="btn btn-outline-primary" (click)="d.toggle()" type="button">
+                Calendario
+            </button>
+		</div>
+	</div>
+</form>

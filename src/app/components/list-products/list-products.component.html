@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="title" style="justify-content: center;">
+    <h4>Listado de Prospectos</h4>
+  </div>
+
+  <div class="content">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        {{ dropdownText }}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem *ngFor="let course of courses" (click)="selectCourse(course)">
+          {{ course.area }} / {{ course.name }}
+        </button>
+      </div>
+    </div>
+    
+    <app-datepicker></app-datepicker>
+  </div>
+
+  <hr />
+
+  <div *ngIf="noResultsMessage" class="alert alert-info">
+    {{ noResultsMessage }}
+  </div>
+
+  <form #attendanceForm="ngForm">
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col" class="column">No.</th>
+          <th scope="col" class="column">Nombre</th>
+          <th scope="col" class="column">Curso</th>
+          <th scope="col" class="column">Asistencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listStudents" class="table-active">
+          <th scope="row" class="column">{{ item.id }}</th>
+          <td class="column">{{ item.studentName }} {{ item.lastname }} {{ item.secondLastname }}</td>
+          <td class="column">
+            <ng-container *ngIf="item.course">
+              {{ item.course.area }} / {{ item.courseName }}
+            </ng-container>
+          </td>
+          <td>
+            <div class="form-check">
+              <input 
+                type="checkbox" 
+                class="form-check-input" 
+                id="asistencia{{ item.id }}" 
+                *ngIf="item.attendance"
+                [(ngModel)]="item.attendance.attendance"
+                name="attendance{{ item.id }}"
+                (change)="toggleAttendance(item)"
+              >
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

@@ -12,7 +12,7 @@ export class AttendandeService {
   private myApiUrl : string;
 
   constructor ( private http : HttpClient ) {
-    this.myApiUrl = 'https://ceeci-prospecto-web.vercel.app/api/users'
+    this.myApiUrl = 'https://ceeci-prospectos.vercel.app/api/users'
   }
 
   getListStudents () : Observable<Student[]> {

@@ -11,7 +11,7 @@ export class StudentAttendanceService {
   private myApiUrl: string;
 
   constructor ( private http: HttpClient ) { 
-    this.myApiUrl = 'https://ceeci-prospecto-web.vercel.app/api/rollslist';
+    this.myApiUrl = 'https://ceeci-prospectos.vercel.app/api/rollslist';
   }
 
   saveAttendance(attendance: Attendance | Attendance[]): Observable<void> {

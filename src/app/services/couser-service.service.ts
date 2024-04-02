@@ -11,7 +11,7 @@ export class CouserServiceService {
   private myApiUrl: string;
 
   constructor( private http: HttpClient ) {
-    this.myApiUrl = 'https://ceeci-prospecto-web.vercel.app/api/courses'
+    this.myApiUrl = 'https://ceeci-prospectos.vercel.app/api/courses'
   }
 
   getListCourses(): Observable<Course[]> {

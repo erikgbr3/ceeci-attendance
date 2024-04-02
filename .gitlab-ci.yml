@@ -1,0 +1,12 @@
+image: node:20.11.0
+
+stages:
+  - deploy
+
+deploy_production:
+  stage: deploy
+  script:
+    - npm install -g vercel
+    - vercel --prod
+  only:
+    - main
